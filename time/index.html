@@ -30,7 +30,7 @@
 
 <p id="countdownTitle">Time? DrFreeman?:<p>
 <p id="demo"></p>
-<input id="myDate" type="date">
+<input value="2026-05-18"id="myDate" type="date">
 <button onClick="window.location.reload();">Apply</button>
 
 
@@ -39,7 +39,7 @@
   </div>
 </div>
 
-<script>
+<script>//clock
 
 let hrs = document.getElementById("hrs")
 let min = document.getElementById("min")
@@ -67,7 +67,7 @@ setInterval(()=>{
 
 
 </script>
-<script>
+<script>//countdown
 
 
 var x = document.getElementById("myDate").value;
@@ -104,10 +104,9 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-<script>
-var x = document.getElementById("myDate").value;
+<script>/// bday detection system
 
-console.log(x);
+var x = document.getElementById("myDate").value;
 
 if (x === "2026-05-18") {
 
