@@ -105,11 +105,11 @@ var x = setInterval(function() {
 }, 1000);
 </script>
 
-<script>/// bday detection system
+<script>/// custom messages for different dates
 
 var x = document.getElementById("myDate").value;
 
-if (x === "2026-05-18") {
+if (x.slice(5) === "05-18") {
 
 	document.getElementById('countdownTitle').innerHTML = "Countdown until my birthday";
 } else {
@@ -118,19 +118,20 @@ if (x === "2026-05-18") {
 
 }
 
+if (x.slice(5) === "12-25") {
 
+	document.getElementById('countdownTitle').innerHTML = "Countdown until Christmas";
+}
 
 </script>
-<script>
+<script>//default value of the countdown
 
 let curTime = new Date();
-
 let year = curTime.getFullYear();
-
 
 let bday = year+1+"-05-18"
 
-console.log(bday);
+document.getElementById('myDate').value = bday;
 
 </script>
 
@@ -139,3 +140,16 @@ console.log(bday);
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
