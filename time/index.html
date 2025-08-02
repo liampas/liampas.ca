@@ -30,7 +30,7 @@
 
 <p id="countdownTitle">countdown<p>
 <p id="countdown"></p>
-<input value="2026-05-18" id="myDate" type="date">
+<input id="myDate" type="date">
 <button onClick="window.location.reload();">Apply</button>
 
 
@@ -66,6 +66,18 @@ setInterval(()=>{
 
 
 
+</script>
+<script>//default value of the countdown
+
+let curTime = new Date();
+let year = curTime.getFullYear();
+let current_countdown = document.getElementById('myDate').value
+
+let bday = year+1+"-05-18"
+
+if (current_countdown === "") {
+	document.getElementById('myDate').value = bday;
+}
 </script>
 <script>//countdown
 
@@ -122,16 +134,6 @@ if (x.slice(5) === "12-25") {
 
 	document.getElementById('countdownTitle').innerHTML = "Countdown until Christmas";
 }
-
-</script>
-<script>//default value of the countdown
-
-let curTime = new Date();
-let year = curTime.getFullYear();
-
-let bday = year+1+"-05-18"
-
-document.getElementById('myDate').value = bday;
 
 </script>
 
