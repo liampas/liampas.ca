@@ -29,8 +29,8 @@
 
 
 <p id="countdownTitle">Time? DrFreeman?:<p>
-<p id="demo"></p>
-<input value="2026-05-18"id="myDate" type="date">
+<p id="countdown"></p>
+<input value="2026-05-18" id="myDate" type="date">
 <button onClick="window.location.reload();">Apply</button>
 
 
@@ -93,17 +93,18 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  // Display the result in the element with id="countdown"
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("countdown").innerHTML = "FINISHED!";
   }
 }, 1000);
 </script>
+
 <script>/// bday detection system
 
 var x = document.getElementById("myDate").value;
