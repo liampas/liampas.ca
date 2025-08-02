@@ -27,6 +27,8 @@
   </div>
   <div>
 
+
+<p id="countdownTitle">Time? DrFreeman?:<p>
 <p id="demo"></p>
 <input id="myDate" type="date">
 <button onClick="window.location.reload();">Apply</button>
@@ -67,9 +69,12 @@ setInterval(()=>{
 </script>
 <script>
 
+
 var x = document.getElementById("myDate").value;
 
 console.log(x);
+
+
 
 // Set the date we're counting down to
 var countDownDate = new Date(x).getTime();
@@ -98,6 +103,19 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+</script>
+<script>
+var x = document.getElementById("myDate").value;
+
+console.log(x);
+
+if (x === "2026-05-18") {
+
+	document.getElementById('countdownTitle').innerHTML = "Time until my bday";
+}
+
+
+
 </script>
 
 
