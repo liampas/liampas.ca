@@ -28,7 +28,7 @@
   <div>
 
 
-<p id="countdownTitle">Time? DrFreeman?:<p>
+<p id="countdownTitle">countdown<p>
 <p id="countdown"></p>
 <input value="2026-05-18" id="myDate" type="date">
 <button onClick="window.location.reload();">Apply</button>
@@ -111,7 +111,11 @@ var x = document.getElementById("myDate").value;
 
 if (x === "2026-05-18") {
 
-	document.getElementById('countdownTitle').innerHTML = "Time until my bday";
+	document.getElementById('countdownTitle').innerHTML = "Countdown until my birthday";
+} else {
+
+	document.getElementById('countdownTitle').innerHTML = "Countdown until " + x;
+
 }
 
 
