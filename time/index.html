@@ -28,6 +28,8 @@
   <div>
 
 <p id="demo"></p>
+<input id="myDate" type="date">
+<button onClick="window.location.reload();">Apply</button>
 
 
 
@@ -64,9 +66,13 @@ setInterval(()=>{
 
 </script>
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("may 18, 2026 00:00:00").getTime();
 
+var x = document.getElementById("myDate").value;
+
+console.log(x);
+
+// Set the date we're counting down to
+var countDownDate = new Date(x).getTime();
 // Update the count down every 1 second
 var x = setInterval(function() {
 
