@@ -119,6 +119,9 @@ z-index: 1000;
     background-color: #FFFFFF;
     border-style: none;
     padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .bento:hover {
