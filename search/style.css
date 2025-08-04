@@ -123,8 +123,8 @@ z-index: 1000;
     width: 24px;
     height: 24px;
     background-color: black;
-    mask: url("../icons/bento-menu.svg") no-repeat center;
-    -webkit-mask: url("../icons/bento-menu.svg") no-repeat center;
+    mask: url("/icons/bento-menu.svg") no-repeat center;
+    -webkit-mask: url("/icons/bento-menu.svg") no-repeat center;
     mask-size: contain;
     -webkit-mask-size: contain;
 }
