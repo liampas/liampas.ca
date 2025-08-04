@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Homepage</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <h1>Search</h1>
+  <input type="text" id="searchInput" placeholder="search the web" />
+  <div>
+    <button onclick="duckSearch()">Search DuckDuckGo</button>
+    <button onclick="braveLucky()">I'm Feeling Lucky</button>
+  </div>
+
+  <script>
+    async function braveSearch() {
+      const query = document.getElementById("searchInput").value;
+      window.location.href = "https://search.brave.com/search?q=" + encodeURIComponent(query);
+    }
+
+
+    function duckSearch() {
+      const query = document.getElementById("searchInput").value;
+      window.location.href = "https://duckduckgo.com/?q=" + encodeURIComponent(query);
+    }
+
+	async function braveLucky() {
+ 	 const query = document.getElementById("searchInput").value;
+ 	 const res = await fetch("brave-proxy.php?q=" + encodeURIComponent(query));
+ 	 const data = await res.json();
+ 	 const url = data.web?.results?.[0]?.url;
+	  if (url) window.location.href = url;
+	  else alert("No result found.");
+	}
+
+
+  </script>
+
+</body>
+</html>
