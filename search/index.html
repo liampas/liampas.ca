@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <title>Google</title>
-  <style>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-left {
+  		margin: 0px 30px;
+
+        overflow: hidden;
+  display: flex;
+  align-items: center;
+}
 
 
 #searchInput {
@@ -61,43 +79,47 @@ border-color: #DADCE0;
   grid-template-columns: auto auto auto;
   background-color: #F8FAFD;
   padding: 40px;
-  width: 300px;
-  height: 500px;
+  width: 250px;
+  height: 400px;
   border-radius: 35px;
-}
 
-.container > div {
-
-  font-size: 30px;
-  text-align: center;
 }
 
 .icon {
 
   	border-radius: 10px;
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
     width: 30px;
     height: 30px;
    
 }
 
 .icon:hover {
-
-  	border-radius: 10px;
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
     background-color: #E9EEF6;
-    width: 30px;
-    height: 30px;
-   
 }
 
   </style>
 </head>
 <body>
+
+<nav class="topnav">
+		<div class="nav-left">
+			<a href="#info">About</a>
+			<a href="#money">Store</a>			
+		</div>
+		
+		<ul>
+	
+			<a href="https://liampas.ca" class="btnbuy" >Gmail</a>
+			<a href="https://liampas.ca/nextcloud">Images</a> 
+  			<button type="button" onclick="toggle()">...</button>
+		</ul>
+		
+	</nav>
+
+
   <img src="https://logos-world.net/wp-content/uploads/2020/09/Google-Logo-700x394.png"  style="margin:auto;display:flex;justify-content:center;width:240px;height:135px;" alt="Google">
 <form onsubmit="duckSearch(); return false;">
   <input type="text" id="searchInput" placeholder="search the web" />
@@ -108,13 +130,16 @@ border-color: #DADCE0;
     <button class="box" onclick="braveLucky()">I'm Feeling Lucky</button>
   </div>
 
-  
-<div class="container">
-  <a class="icon" href="#account"><i class="fas fa-cloud"></i></a>
-  <a class="icon" href="/nextcloud">1</a>
+<div id="container" class="container">
+  <a class="icon" href="#account"><i class="fa fa-users"></i></a>
+  <a class="icon" href="https://liampas.ca/nextcloud/index.php/apps/files"><i class="fa fa-cloud" aria-hidden="true"></i>
+  </a>
+  <a class="icon" href="#buisnes"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+  <a class="icon" href="https://sapmail.ca">1</a>
   <a class="icon" href="#account">1</a>
   <a class="icon" href="/nextcloud">1</a>
   <a class="icon" href="#account">1</a>
+  <a class="icon" href="/nextcloud">1</a>
   <a class="icon" href="/nextcloud">1</a>
   <a class="icon" href="#account">1</a>
   <a class="icon" href="/nextcloud">1</a>
@@ -142,8 +167,17 @@ border-color: #DADCE0;
 	  else alert("No result found.");
 	}
 
-
   </script>
+<script>
+function toggle() {
+    var target = document.getElementById("container");
+    if (target.style.display === 'none') {
+        target.style.display = 'block';
+    } else {
+        target.style.display = 'none';
+    }
+}
+</script>
 
 </body>
 </html>
