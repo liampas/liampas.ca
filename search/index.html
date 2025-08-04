@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <title>Google</title>
   <style>
@@ -55,6 +56,44 @@ border-color: #DADCE0;
   
 }
 
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #F8FAFD;
+  padding: 40px;
+  width: 300px;
+  height: 500px;
+  border-radius: 35px;
+}
+
+.container > div {
+
+  font-size: 30px;
+  text-align: center;
+}
+
+.icon {
+
+  	border-radius: 10px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+    width: 30px;
+    height: 30px;
+   
+}
+
+.icon:hover {
+
+  	border-radius: 10px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+    background-color: #E9EEF6;
+    width: 30px;
+    height: 30px;
+   
+}
 
   </style>
 </head>
@@ -68,6 +107,19 @@ border-color: #DADCE0;
     <button class="box" onclick="duckSearch()">Google Search</button>
     <button class="box" onclick="braveLucky()">I'm Feeling Lucky</button>
   </div>
+
+  
+<div class="container">
+  <a class="icon" href="#account"><i class="fas fa-cloud"></i></a>
+  <a class="icon" href="/nextcloud">1</a>
+  <a class="icon" href="#account">1</a>
+  <a class="icon" href="/nextcloud">1</a>
+  <a class="icon" href="#account">1</a>
+  <a class="icon" href="/nextcloud">1</a>
+  <a class="icon" href="#account">1</a>
+  <a class="icon" href="/nextcloud">1</a>
+  <a class="icon" href="/nextcloud">1</a>
+</div>
 
   <script>
     async function braveSearch() {
