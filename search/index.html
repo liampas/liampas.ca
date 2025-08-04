@@ -6,6 +6,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -16,7 +17,6 @@
 		</div>
 		
 		<ul>
-	
 			<a href="https://liampas.ca" class="btnbuy" >Gmail</a>
 			<a href="https://liampas.ca/nextcloud">Images</a> 
   			<button type="button" onclick="toggle()">...</button>
@@ -76,10 +76,10 @@
 <script>
 function toggle() {
     var target = document.getElementById("container");
-    if (target.style.display === 'none') {
-        target.style.display = 'block';
-    } else {
+    if (target.style.display === 'grid') {
         target.style.display = 'none';
+    } else {
+        target.style.display = 'grid';
     }
 }
 </script>
