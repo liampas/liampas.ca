@@ -60,9 +60,10 @@ border-color: #DADCE0;
 </head>
 <body>
   <img src="https://logos-world.net/wp-content/uploads/2020/09/Google-Logo-700x394.png"  style="margin:auto;display:flex;justify-content:center;width:240px;height:135px;" alt="Google">
-  <div class="search">
+<form onsubmit="duckSearch(); return false;">
   <input type="text" id="searchInput" placeholder="search the web" />
-  </div>
+</form>
+
   <div class="boxbox">
     <button class="box" onclick="duckSearch()">Google Search</button>
     <button class="box" onclick="braveLucky()">I'm Feeling Lucky</button>
