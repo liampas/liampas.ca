@@ -4,6 +4,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dashboard</title>
 	<link rel="stylesheet" href="style.css">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 
 </head>
 
@@ -45,6 +49,24 @@ setInterval(()=>{
 },1000)
 
 </script>
+<script>
+document.addEventListener('touchmove', function (e) {
+  e.preventDefault();
+}, { passive: false });
+
+
+document.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+
+window.addEventListener("orientationchange", () => {
+  setTimeout(() => {
+    location.reload(); // force reload on rotate
+  }, 300); // wait a bit for rotation to settle
+});
+
+
+</script>
+
+
 
 </body>
 </html>
