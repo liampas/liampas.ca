@@ -7,6 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="apple-touch-icon" href="../icons/dashboard.png">
+
 
 
 </head>
@@ -18,9 +20,7 @@
 
 		<span id="hrs">00</span>
 		<span>:</span>
-		<span id="min">00</span>
-		<span>:</span>
-		<span id="sec">00</span>
+		<span id="min">00</span>		
 
 	</div>
   </div>
@@ -30,21 +30,19 @@
 
 let hrs = document.getElementById("hrs")
 let min = document.getElementById("min")
-let sec = document.getElementById("sec")
+
 
 let currentTime = new Date();
-hrs.innerHTML = currentTime.getHours();
+
+hrs.innerHTML = (currentTime.getHours() >= 12 ? ((currentTime.getHours() - 12) < 10 ? "0" : "") + (currentTime.getHours() - 12) : (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours());
 min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
-sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
 
 setInterval(()=>{
 	
 	let currentTime = new Date();
 
-	hrs.innerHTML = currentTime.getHours();
+	hrs.innerHTML = (currentTime.getHours() >= 12 ? ((currentTime.getHours() - 12) < 10 ? "0" : "") + (currentTime.getHours() - 12) : (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours());
 	min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
-	sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
-
 
 },1000)
 
