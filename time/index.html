@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Digital CLock Using Javascript - Easy Tutorials </title>
+	<title>Time, Dr. Freeman?</title>
 	<link rel="stylesheet" href="style.css">
 
 </head>
@@ -20,7 +20,10 @@
 
 
 	</div>
+	<div class="clock">
 
+		<p id="date">date<p>
+	</div>
 
 
 
@@ -42,14 +45,19 @@
 
 <script>//clock
 
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
 let hrs = document.getElementById("hrs")
 let min = document.getElementById("min")
 let sec = document.getElementById("sec")
+let date = document.getElementById("date")
 
 let currentTime = new Date();
 hrs.innerHTML = currentTime.getHours();
 min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
 sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
+//date.innerHTML = new Date();
+date.innerHTML = month[currentTime.getMonth()] + " " + currentTime.getDate() + " " + currentTime.getFullYear();
 
 setInterval(()=>{
 	
