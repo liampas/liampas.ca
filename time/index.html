@@ -30,20 +30,14 @@
 
 <p id="countdownTitle">countdown<p>
 <p id="countdown"></p>
-<input id="myDate" type="date">
+<input id="myDate" type="date" content="2008-12-23">
 <button onClick="window.location.reload();">Apply</button>
 
 
 
 
   </div> 
-   <div>
 
-<p>days since last incident<p>
-<p id="lastIncident"></p>
-
-
-  </div>
 </div>
 
 <script>//clock
@@ -68,18 +62,29 @@ setInterval(()=>{
 
 },1000)
 
-
-
-
-
-
 </script>
+
+
 <script>//countdown
 
 
 var x = document.getElementById("myDate").value;
 
 console.log(x);
+
+
+//default value of the countdown
+
+let curTime = new Date();
+let year = curTime.getFullYear();
+let current_countdown = document.getElementById('myDate').value
+
+let bday = year+1+"-05-18"
+
+if (current_countdown === "") {
+	document.getElementById('myDate').value = bday;
+	var x = bday
+}
 
 
 
@@ -130,84 +135,7 @@ if (x.slice(5) === "12-25") {
 	document.getElementById('countdownTitle').innerHTML = "Countdown until Christmas";
 }
 
-
-//default value of the countdown
-
-let curTime = new Date();
-let year = curTime.getFullYear();
-let current_countdown = document.getElementById('myDate').value
-
-let bday = year+1+"-05-18"
-
-if (current_countdown === "mm-dd-yyyy") {
-	document.getElementById('myDate').value = bday;
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>//last incident
-
-
-// Set the date we're counting down to
-var countDownDate = new Date(07-21-2015).getTime();
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="countdown"
-  document.getElementById("lastIncident").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("lastIncident").innerHTML = "FINISHED!";
-  }
-}, 1000);
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
