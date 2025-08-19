@@ -4,6 +4,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dashboard</title>
 	<link rel="stylesheet" href="style.css">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="apple-touch-icon" sizes="180x180" href="../dashboard.png">
+
+
+
+
 
 </head>
 
@@ -14,9 +22,7 @@
 
 		<span id="hrs">00</span>
 		<span>:</span>
-		<span id="min">00</span>
-		<span>:</span>
-		<span id="sec">00</span>
+		<span id="min">00</span>		
 
 	</div>
   </div>
@@ -26,25 +32,41 @@
 
 let hrs = document.getElementById("hrs")
 let min = document.getElementById("min")
-let sec = document.getElementById("sec")
+
 
 let currentTime = new Date();
-hrs.innerHTML = currentTime.getHours();
+
+hrs.innerHTML = (currentTime.getHours() >= 12 ? ((currentTime.getHours() - 12) < 10 ? "0" : "") + (currentTime.getHours() - 12) : (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours());
 min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
-sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
 
 setInterval(()=>{
 	
 	let currentTime = new Date();
 
-	hrs.innerHTML = currentTime.getHours();
+	hrs.innerHTML = (currentTime.getHours() >= 12 ? ((currentTime.getHours() - 12) < 10 ? "0" : "") + (currentTime.getHours() - 12) : (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours());
 	min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
-	sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
-
 
 },1000)
 
 </script>
+<script>
+document.addEventListener('touchmove', function (e) {
+  e.preventDefault();
+}, { passive: false });
+
+
+document.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+
+window.addEventListener("orientationchange", () => {
+  setTimeout(() => {
+    location.reload(); // force reload on rotate
+  }, 300); // wait a bit for rotation to settle
+});
+
+
+</script>
+
+
 
 </body>
 </html>
