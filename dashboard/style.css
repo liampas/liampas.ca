@@ -13,12 +13,12 @@ html, body {
   width: 100%;
   overflow: hidden;
   position: fixed;
+	background: linear-gradient(45deg,#09001f, #30197d);
 }
 
 .hero {
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(45deg,#09001f, #30197d);
 	color: #fff;
 	position: relative;
 }
