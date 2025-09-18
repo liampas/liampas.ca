@@ -65,15 +65,16 @@ window.addEventListener("orientationchange", () => {
 
 
 </script>
-<script>
-	//	let currentTime = new Date();
-	if ( currentTime.getHours() >= 9 ) {
-		document.body.style.background = 'linear-gradient(45deg,#09001f, #ff0000)';
-		console.log("aaaaa");
-	}
-	else {
-		console.log(currentTime.getHours());
-	}
+<script>//changes the background at a certain hour (night mode)
+	setTimeout(() => {
+		if ( currentTime.getHours() >= 9 ) {
+			document.body.style.background = 'linear-gradient(45deg,#09001f, #ff0000)';
+			console.log("aaaaa");
+		}
+		else {
+			console.log(currentTime.getHours());
+		}
+	}, 3000);
 </script>
 
 
