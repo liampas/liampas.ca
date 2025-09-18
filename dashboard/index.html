@@ -25,28 +25,47 @@
 		<span id="min">00</span>		
 
 	</div>
+	<div class="date">
+		<span id="year">yy</span>
+		<span>-</span>
+		<span id="month">mm</span>
+		<span>-</span>
+		<span id="day">dd</span>
+	</div>
   </div>
 </div>
 
 <script>//clock
 
-let hrs = document.getElementById("hrs")
-let min = document.getElementById("min")
+	let hrs = document.getElementById("hrs")
+	let min = document.getElementById("min")
 
+	let year = document.getElementById("year")
+	let month = document.getElementById("month")
+	let day = document.getElementById("day")
 
-let currentTime = new Date();
-
-hrs.innerHTML = (currentTime.getHours() >= 12 ? ((currentTime.getHours() - 12) < 10 ? "0" : "") + (currentTime.getHours() - 12) : (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours());
-min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
-
-setInterval(()=>{
-	
 	let currentTime = new Date();
 
 	hrs.innerHTML = (currentTime.getHours() >= 12 ? ((currentTime.getHours() - 12) < 10 ? "0" : "") + (currentTime.getHours() - 12) : (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours());
 	min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
 
-},1000)
+//	year.innerHTML = currentTime.getFullYear().toString().substr(-2);
+	year.innerHTML = currentTime.getFullYear();
+	month.innerHTML = currentTime.getMonth() + 1;
+	day.innerHTML = currentTime.getDate();
+
+	setInterval(()=>{
+
+		let currentTime = new Date();
+
+		hrs.innerHTML = (currentTime.getHours() >= 12 ? ((currentTime.getHours() - 12) < 10 ? "0" : "") + (currentTime.getHours() - 12) : (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours());
+		min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+
+//	year.innerHTML = currentTime.getFullYear().toString().substr(-2);
+	year.innerHTML = currentTime.getFullYear();
+	month.innerHTML = currentTime.getMonth() + 1;
+	day.innerHTML = currentTime.getDate();
+	},1000)
 
 </script>
 <script>
@@ -67,7 +86,7 @@ window.addEventListener("orientationchange", () => {
 </script>
 <script>//changes the background at a certain hour (night mode)
 	setTimeout(() => {
-		if ( currentTime.getHours() >= 9 ) {
+		if ( currentTime.getHours() >= 22 ) {
 			document.body.style.background = 'linear-gradient(45deg,#09001f, #ff0000)';
 			console.log("aaaaa");
 		}
